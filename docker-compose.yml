@@ -1,0 +1,16 @@
+version: '3'
+services:
+  mssql-dev:
+    image: microsoft/mssql-server-linux
+    hostname: mssql
+    restart: always
+    environment:
+      - MSSQL_SA_PASSWORD=P@ssword
+      - ACCEPT_EULA=Y
+      - MSSQL_PID=Developer
+    ports:
+      - "1433:1433"
+    networks:
+      - skynet
+networks:
+  skynet:
